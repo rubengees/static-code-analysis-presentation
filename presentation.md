@@ -23,11 +23,11 @@
 
 --
 
-- Codebeispiel
+- (Unit)-Testabdeckung: `JaCoCo`
 
 --
 
-- (Unit)-Testabdeckung: `JaCoCo`
+- Codebeispiel
 
 --
 
@@ -49,12 +49,70 @@
 
 - Quellen
 
---
-
-- Das wars!
-
 ---
 
 # Was ist statische Code Analyse?
 
-TODO
+_TODO_
+
+---
+
+# Metriken
+
+_TODO_
+
+---
+
+# Checkstyle
+
+_TODO_
+
+---
+
+# FindBugs
+
+_TODO_
+
+---
+
+# JaCoCo
+
+_TODO_
+
+---
+
+<!-- class: center, middle -->
+# Codebeispiel
+
+##### Checkstyle, FindBugs und Jacoco
+
+---
+
+# Sonarqube
+
+_TODO_
+
+---
+
+<!-- class: center, middle -->
+# Codebeispiel
+
+##### Sonarqube und CI (Jenkins)
+
+---
+
+# Zusammenfassung
+
+_TODO_
+
+---
+
+# Ausblick
+
+_TODO_
+
+---
+
+# Quellen
+
+_TODO_
