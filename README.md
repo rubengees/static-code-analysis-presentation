@@ -1,6 +1,6 @@
 # static-code-analysis-presentation
 
-A german presentation on static code analysis and especially it's tools, done with [Remark](https://github.com/gnab/remark).
+A german presentation on static code analysis and especially its tools, done with [Remark](https://github.com/gnab/remark).
 
 #### Viewing
 
