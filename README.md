@@ -2,7 +2,7 @@
 
 A german presentation on static code analysis and especially it's tools, done with [Remark](https://github.com/gnab/remark).
 
-## Viewing
+#### Viewing
 
 - Install [serve](https://www.npmjs.com/package/serve).
 - Run `serve` in the directory.
