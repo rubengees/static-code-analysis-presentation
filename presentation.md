@@ -11,10 +11,6 @@
 
 --
 
-- Theorie: Metriken
-
---
-
 - Einheitlichen Style überprüfen: `Checkstyle`
 
 --
@@ -27,7 +23,7 @@
 
 --
 
-- Codebeispiel
+- Demo
 
 --
 
@@ -35,7 +31,7 @@
 
 --
 
-- Codebeispiel
+- Demo
 
 --
 
@@ -52,12 +48,6 @@
 ---
 
 # Was ist statische Code Analyse?
-
-_TODO_
-
----
-
-# Metriken
 
 _TODO_
 
@@ -82,7 +72,7 @@ _TODO_
 ---
 
 <!-- class: center, middle -->
-# Codebeispiel
+# Demo
 
 ##### Checkstyle, FindBugs und Jacoco
 
@@ -95,7 +85,7 @@ _TODO_
 ---
 
 <!-- class: center, middle -->
-# Codebeispiel
+# Demo
 
 ##### Sonarqube und CI (Jenkins)
 
