@@ -202,8 +202,17 @@ spezifiziert.
 ]
 
 .right-column[
-Einzelne Regeln können für ganze Dateien ignoriert werden. Neue Datei:
-`checkstyle_suppressions.xml`.
+Einzelne Regeln können für ganze Dateien ignoriert werden. Es wird ein
+`SuppresionFilter`-Modul eingetragen.
+
+```xml
+<module name="SuppressionFilter">
+    <property name="file" value="cs_suppressions.xml" />
+</module>
+```
+
+Neue Datei:
+`cs_suppressions.xml`.
 
 ```xml
 <suppressions>
@@ -222,6 +231,49 @@ public void someMethod() {
 ]
 
 ---
+
+.left-column[
+  ## Was ist das?
+  ## Warum brauche ich das?
+  ## Wie funktioniert das?
+  ## Wie benutze ich das?
+]
+
+.right-column[
+### Möglichkeit 1: CLI Tool
+
+```bash
+java -jar checkstyle.jar -c checkstyle.xml MyClass.java
+```
+
+Es gibt zahlreiche Konfigurationsmöglichkeiten:
+
+- `-f` gibt das Ausgabeformat an. Es gibt `plain` und `xml`.
+- `-o` gibt an, in welche Datei das Ergebnis geschrieben werden soll.
+- `-e` oder `-x` geben Dateien zum Ignorieren an. `-x` ist RegEx basiert.
+
+.center[![](img/checkstyle-terminal.png)]
+
+Es gibt zwei bekannte Vorgabe-Konfigurationen:
+- [Google](http://checkstyle.sourceforge.net/google_style.html)
+- [Sun](http://checkstyle.sourceforge.net/sun_style.html)
+
+In den meisten Fällen können diese als Ausgangskonfiguration genommen werden und
+bei Bedarf modifiziert werden. 
+]
+
+---
+
+.left-column[
+  ## Was ist das?
+  ## Warum brauche ich das?
+  ## Wie funktioniert das?
+  ## Wie benutze ich das?
+]
+
+.right-column[
+
+]
 
 # FindBugs
 
