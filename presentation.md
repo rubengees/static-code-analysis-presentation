@@ -37,7 +37,7 @@ entsprechende Software (z. B. im Modultest) ausgeführt wird."
 
 <!-- class: center, middle -->
 
-![](img/checkstyle-logo.png)
+.title-image[![](img/checkstyle-logo.png)]
 
 ---
 
@@ -259,38 +259,41 @@ Es gibt zwei bekannte Vorgabe-Konfigurationen:
 - [Sun](http://checkstyle.sourceforge.net/sun_style.html)
 
 In den meisten Fällen können diese als Ausgangskonfiguration genommen werden und
-bei Bedarf modifiziert werden. 
+bei Bedarf modifiziert werden.
 ]
-
----
-
-.left-column[
-  ## Was ist das?
-  ## Warum brauche ich das?
-  ## Wie funktioniert das?
-  ## Wie benutze ich das?
-]
-
-.right-column[
-
-]
-
-# FindBugs
-
-_TODO_
-
----
-
-# JaCoCo
-
-_TODO_
 
 ---
 
 <!-- class: center, middle -->
 # Demo
 
-##### Checkstyle, FindBugs und Jacoco
+##### Checkstyle
+
+---
+
+<!-- class: center, middle -->
+
+.title-image[![](img/findbugs-logo.png)]
+
+---
+
+<!-- class: center, middle -->
+# Demo
+
+##### FindBugs
+
+---
+
+<!-- class: center, middle -->
+
+.title-image[![](img/jacoco-logo.png)]
+
+---
+
+<!-- class: center, middle -->
+# Demo
+
+##### JaCoCo
 
 ---
 
