@@ -1,13 +1,14 @@
-<!-- class: center, middle -->
-# Statische Code Analye
+class: center, middle
 
-##### Von Alexej Esau und Ruben Gees
+# Statische Code-Analyse
+
+***von Alexej Esau und Ruben Gees***
 
 ---
 
-# Struktur
+# Inhalt
 
-- Was ist statische Code Analyse?
+- Was ist statische Code-Analyse?
 
 - Einheitlichen Style überprüfen: `Checkstyle`
 
@@ -25,76 +26,110 @@
 
 ---
 
-# Was ist statische Code Analyse?
+# Was ist statische Code-Analyse?
 
-"Statische Code-Analyse oder kurz statische Analyse ist ein statisches
-Software-Testverfahren, das zur Übersetzungszeit durchgeführt wird. Der
-Quelltext wird hierbei einer Reihe formaler Prüfungen unterzogen, bei denen
-bestimmte Sorten von Fehlern entdeckt werden können, noch bevor die
-entsprechende Software (z. B. im Modultest) ausgeführt wird."
+> *Statische Code-Analyse oder kurz statische Analyse ist ein statisches
+> Software-Testverfahren, das zur Übersetzungszeit durchgeführt wird. Der
+> Quelltext wird hierbei einer Reihe formaler Prüfungen unterzogen, bei denen
+> bestimmte Sorten von Fehlern entdeckt werden können, noch bevor die
+> entsprechende Software (z. B. im Modultest) ausgeführt wird.*
+
+*Quelle: https://de.wikipedia.org/wiki/Statische_Code-Analyse*
 
 ---
 
-<!-- class: center, middle -->
+class: center, middle
 
 .title-image[![](img/checkstyle-logo.png)]
 
 ---
 
+# Checkstyle
+
 .left-column[
-  ## Was ist das?
+## Was?
 ]
 
 .right-column[
-- Automatisches Überprüfen von (Java-)Code auf einen gegebenen Standart.
+- Automatisiertes Validieren des (Java-)Code-Stils gegen definierte Regeln
 
-- Aktuelle Version: `7.7`
+- Aktuelle Version (Mai 2017): `7.7`
 
-- Unter `GNU LGPL v2.1` lizensiert.
+- Lizenz: `GNU LGPL v2.1`
 
 - Aktive Weiterentwicklung auf
-[GitHub](https://github.com/checkstyle/checkstyle).
+    https://github.com/checkstyle/checkstyle
 
-- Jeden Monat ein Release wenn es Änderungen gab.
+- Monatliches Release (sofern Änderungen vorhanden)
 
 - 100% Coverage!
 ]
 
 ---
 
+# Checkstyle
+
 .left-column[
-  ## Was ist das?
-  ## Warum brauche ich das?
+## Was?
+## Wofür?
 ]
 
 .right-column[
-- Entwickler haben unterschiedliche Stile, das Projekt soll aber einheitlich
-sein.
+- Projektweit einheitlicher Code-Stil
 
-- Entwickler machen Fehler beim Design.
+- Vereinfachung der Code-Reviews
+]
 
-- Kein manuelles Review mehr nötig.
+???
+
+- Jeder Entwickler hat seinen eigenen Stil
+
+- Code-Reviews können sich verstärkt auf inhaltliche Korrektheit konzentrieren
+    und müssen sich nicht mehr um simple Stil-Fehler kümmern
+
+---
+
+# Checkstyle
+
+.left-column[
+## Was?
+## Wofür?
+## Wie?
+]
+
+.right-column[
+- Regelwerk via XML konfigurierbar
+
+- Regelwerk
+
+    - Sammlung von Modulen
+
+- Modul
+
+    - Durch Checkstyle ausführbare Einheit
+
+    - Sammlung von Eigenschaften und Modulen
+
+- Eigenschaft
+
+    - Die eigentliche Prüfregel
+
+- Verwendung vordefinierter und/oder eigener Module möglich
 ]
 
 ---
 
+exclude: true
+
+# Checkstyle
+
 .left-column[
-  ## Was ist das?
-  ## Warum brauche ich das?
-  ## Wie funktioniert das?
+## Was?
+## Wofür?
+## Wie?
 ]
 
 .right-column[
-Checkstyle ist stark konfigurierbar. Es gibt eine zentrale Konfiguration:
-`checkstyle.xml`.
-
-- Unterteilung in `Module` und `Eigenschaften`.
-
-- `Module` sind die einzelnen Einheiten die `Checkstyle` ausführt.
-`Eigenschaften` beschreiben wie ein `Modul` seine Arbeit erledigen soll.
-
-- (Viele) vordefinierte Module oder komplett eigene.
-
 ```xml
 <module name="Checker">
     <module name="JavadocPackage"/>
@@ -110,23 +145,17 @@ Checkstyle ist stark konfigurierbar. Es gibt eine zentrale Konfiguration:
 
 ---
 
+# Checkstyle
+
 .left-column[
-  ## Was ist das?
-  ## Warum brauche ich das?
-  ## Wie funktioniert das?
+## Was?
+## Wofür?
+## Wie?
 ]
 
+<!-- TODO Folie irgendwie überarbeiten ... -->
+
 .right-column[
-Alle Module unterstehen dem `Checker`-Modul.
-
-- Wichtige `Eigenschaften`: `baseDir` und `charset`. Es gibt noch viele
-[weitere](http://checkstyle.sourceforge.net/config.html#Checker).
-
-Das `TreeWalker`-Modul erstellt einen Syntaxbaum für jede Datei. Hier finden
-die meisten Checks statt.
-
-- Jedes Untermodul wird aufgerufen wenn ein definiertes Token gefunden wird.
-
 ```xml
 <module name="Checker">
     <module name="TreeWalker">
@@ -139,45 +168,59 @@ die meisten Checks statt.
         </module>
     </module>
 </module>
-
 ```
+
+- Alle Module unterstehen dem `Checker`-Modul.
+
+- Wichtige `Eigenschaften`: `baseDir` und `charset`. Es gibt noch viele
+[weitere](http://checkstyle.sourceforge.net/config.html#Checker).
+
+- Das `TreeWalker`-Modul erstellt einen Syntaxbaum für jede Datei. Hier finden
+die meisten Checks statt.
+
+- Jedes Untermodul wird aufgerufen wenn ein definiertes Token gefunden wird.
 ]
 
 ---
 
+# Checkstyle
+
 .left-column[
-  ## Was ist das?
-  ## Warum brauche ich das?
-  ## Wie funktioniert das?
+## Was?
+## Wofür?
+## Wie?
 ]
 
 .right-column[
-Module können gewichtet werden. Dazu dient die `Eigenschaft` `severity`.
+- Gewichtung von Modulen
 
-```xml
-<module name="Translation">
-    <property name="severity" value="warning"/>
-</module>
-```
+    ```xml
+    <module name="Translation">
+        <property name="severity" value="warning"/>
+    </module>
+    ```
 
-Außerdem können eigene Nachrichten angegeben werden, die bei einem Verstoß
-angezeigt werden.
+- Meldung bei Regelverstoß
 
-```xml
-<module name="MemberName">
-    <message key="name.invalidPattern"
-             value="Member ''{0}'' is wrong!" />
-</module>
-```
+    ```xml
+    <module name="MemberName">
+        <message key="name.invalidPattern"
+                 value="Member ''{0}'' is wrong!" />
+    </module>
+    ```
 ]
 
 ---
 
+# Checkstyle
+
 .left-column[
-  ## Was ist das?
-  ## Warum brauche ich das?
-  ## Wie funktioniert das?
+## Was?
+## Wofür?
+## Wie?
 ]
+
+<!-- TODO Folie irgendwie überarbeiten ... -->
 
 .right-column[
 Komplett eigene Module, die nicht auf tokens basieren, können auch angelegt
@@ -186,7 +229,7 @@ werden. Es wird eine
 spezifiziert.
 
 ```xml
-<!-- Findet Floats die nicht dem Format 3f entsprechen. -->
+<!-- Findet Floats, die nicht dem Format 3f entsprechen. -->
 <module name="RegexpSinglelineJava">
     <property name="format" value="[^\w][\d]+\.f"/>
 </module>
@@ -195,11 +238,15 @@ spezifiziert.
 
 ---
 
+# Checkstyle
+
 .left-column[
-  ## Was ist das?
-  ## Warum brauche ich das?
-  ## Wie funktioniert das?
+## Was?
+## Wofür?
+## Wie?
 ]
+
+<!-- TODO Folie irgendwie überarbeiten ... -->
 
 .right-column[
 Einzelne Regeln können für ganze Dateien ignoriert werden. Es wird ein
@@ -232,15 +279,35 @@ public void someMethod() {
 
 ---
 
+# Checkstyle
+
 .left-column[
-  ## Was ist das?
-  ## Warum brauche ich das?
-  ## Wie funktioniert das?
-  ## Wie benutze ich das?
+## Was?
+## Wofür?
+## Wie?
 ]
 
 .right-column[
-### Möglichkeit 1: CLI Tool
+- Vordefinierte Regelwerke
+
+    - Google: http://checkstyle.sourceforge.net/google_style.html
+
+    - Sun: http://checkstyle.sourceforge.net/sun_style.html
+]
+
+---
+
+# Checkstyle
+
+.left-column[
+## Was?
+## Wofür?
+## Wie?
+## Anwendung
+]
+
+.right-column[
+## Möglichkeit 1: CLI
 
 ```bash
 java -jar checkstyle.jar -c checkstyle.xml MyClass.java
@@ -248,52 +315,43 @@ java -jar checkstyle.jar -c checkstyle.xml MyClass.java
 
 Es gibt zahlreiche Konfigurationsmöglichkeiten:
 
-- `-f` gibt das Ausgabeformat an. Es gibt `plain` und `xml`.
-- `-o` gibt an, in welche Datei das Ergebnis geschrieben werden soll.
-- `-e` oder `-x` geben Dateien zum Ignorieren an. `-x` ist RegEx basiert.
+- `-f` gibt das Ausgabeformat an (`plain`/`xml`)
+- `-o` gibt Ausgabedatei für Ergebnis an
+- `-e` oder `-x` geben Dateien zum Ignorieren an.
+    `-x` ist RegEx basiert.
 
 .center[![](img/checkstyle-terminal.png)]
-
-Es gibt zwei bekannte Vorgabe-Konfigurationen:
-- [Google](http://checkstyle.sourceforge.net/google_style.html)
-- [Sun](http://checkstyle.sourceforge.net/sun_style.html)
-
-In den meisten Fällen können diese als Ausgangskonfiguration genommen werden und
-bei Bedarf modifiziert werden.
 ]
 
 ---
 
-<!-- class: center, middle -->
-# Demo
+class: center, middle
 
-##### Checkstyle
+# Demo
 
 ---
 
-<!-- class: center, middle -->
+class: center, middle
 
 .title-image[![](img/findbugs-logo.png)]
 
 ---
 
-<!-- class: center, middle -->
-# Demo
+class: center, middle
 
-##### FindBugs
+# Demo
 
 ---
 
-<!-- class: center, middle -->
+class: center, middle
 
 .title-image[![](img/jacoco-logo.png)]
 
 ---
 
-<!-- class: center, middle -->
-# Demo
+class: center, middle
 
-##### JaCoCo
+# Demo
 
 ---
 
@@ -303,10 +361,9 @@ _TODO_
 
 ---
 
-<!-- class: center, middle -->
-# Demo
+class: center, middle
 
-##### Sonarqube und CI (Jenkins)
+# Demo
 
 ---
 
