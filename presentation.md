@@ -57,8 +57,7 @@ class: center, middle
 
 - Lizenz: `GNU LGPL v2.1`
 
-- Aktive Weiterentwicklung auf
-    https://github.com/checkstyle/checkstyle
+- Aktive Weiterentwicklung auf https://github.com/checkstyle/checkstyle
 
 - Monatliches Release (sofern Änderungen vorhanden)
 
@@ -85,7 +84,7 @@ class: center, middle
 - Jeder Entwickler hat seinen eigenen Stil
 
 - Code-Reviews können sich verstärkt auf inhaltliche Korrektheit konzentrieren
-    und müssen sich nicht mehr um simple Stil-Fehler kümmern
+  und müssen sich nicht mehr um simple Stil-Fehler kümmern
 
 ---
 
@@ -102,25 +101,23 @@ class: center, middle
 
 - Regelwerk
 
-    - Sammlung von Modulen
+  - Sammlung von Modulen
 
 - Modul
 
-    - Durch Checkstyle ausführbare Einheit
+  - Durch Checkstyle ausführbare Einheit
 
-    - Sammlung von Eigenschaften und Modulen
+  - Sammlung von Eigenschaften und Modulen
 
 - Eigenschaft
 
-    - Die eigentliche Prüfregel
+  - Einstellung für das übergeordnete Modul
 
 - Verwendung vordefinierter und/oder eigener Module möglich
 ]
 
 ---
 
-exclude: true
-
 # Checkstyle
 
 .left-column[
@@ -132,41 +129,15 @@ exclude: true
 .right-column[
 ```xml
 <module name="Checker">
-    <module name="JavadocPackage"/>
-    <module name="TreeWalker">
-        <property name="tabWidth" value="4"/>
-        <module name="AvoidStarImport"/>
-        <module name="ConstantName"/>
-        ...
+  <module name="TreeWalker">
+    <module name="MethodLength">
+      <property name="tokens" value="METHOD_DEF"/>
     </module>
-</module>
-```
-]
-
----
-
-# Checkstyle
-
-.left-column[
-## Was?
-## Wofür?
-## Wie?
-]
-
-<!-- TODO Folie irgendwie überarbeiten ... -->
-
-.right-column[
-```xml
-<module name="Checker">
-    <module name="TreeWalker">
-        <module name="MethodLength">
-            <property name="tokens" value="METHOD_DEF"/>
-        </module>
-        <module name="MethodLength">
-            <property name="tokens" value="CTOR_DEF"/>
-            <property name="max" value="60"/>
-        </module>
+    <module name="MethodLength">
+      <property name="tokens" value="CTOR_DEF"/>
+      <property name="max" value="60"/>
     </module>
+  </module>
 </module>
 ```
 
@@ -175,10 +146,9 @@ exclude: true
 - Wichtige `Eigenschaften`: `baseDir` und `charset`. Es gibt noch viele
 [weitere](http://checkstyle.sourceforge.net/config.html#Checker).
 
-- Das `TreeWalker`-Modul erstellt einen Syntaxbaum für jede Datei. Hier finden
-die meisten Checks statt.
+- `TreeWalker`-Modul ist das wichtigste
 
-- Jedes Untermodul wird aufgerufen wenn ein definiertes Token gefunden wird.
+  - Aufruf von Modulen wenn Token gefuden wird
 ]
 
 ---
@@ -194,46 +164,31 @@ die meisten Checks statt.
 .right-column[
 - Gewichtung von Modulen
 
-    ```xml
-    <module name="Translation">
-        <property name="severity" value="warning"/>
-    </module>
-    ```
+  ```xml
+  <module name="Translation">
+    <property name="severity" value="warning"/>
+  </module>
+  ```
 
 - Meldung bei Regelverstoß
 
-    ```xml
-    <module name="MemberName">
-        <message key="name.invalidPattern"
-                 value="Member ''{0}'' is wrong!" />
-    </module>
-    ```
-]
+  ```xml
+  <module name="MemberName">
+    <message key="name.invalidPattern"
+             value="Member ''{0}'' is wrong!" />
+  </module>
+  ```
 
----
+- Eigene Module mit
+[RegEx](https://de.wikipedia.org/wiki/Regul%C3%A4rer_Ausdruck)
 
-# Checkstyle
-
-.left-column[
-## Was?
-## Wofür?
-## Wie?
-]
-
-<!-- TODO Folie irgendwie überarbeiten ... -->
-
-.right-column[
-Komplett eigene Module, die nicht auf tokens basieren, können auch angelegt
-werden. Es wird eine
-[RegEx](https://de.wikipedia.org/wiki/Regul%C3%A4rer_Ausdruck) zum Finden
-spezifiziert.
-
-```xml
-<!-- Findet Floats, die nicht dem Format 3f entsprechen. -->
-<module name="RegexpSinglelineJava">
+  ```xml
+  <!-- Findet Floats, die nicht  -->
+  <!-- dem Format 3f entsprechen. -->
+  <module name="RegexpSinglelineJava">
     <property name="format" value="[^\w][\d]+\.f"/>
-</module>
-```
+  </module>
+  ```
 ]
 
 ---
@@ -246,35 +201,31 @@ spezifiziert.
 ## Wie?
 ]
 
-<!-- TODO Folie irgendwie überarbeiten ... -->
-
 .right-column[
-Einzelne Regeln können für ganze Dateien ignoriert werden. Es wird ein
-`SuppresionFilter`-Modul eingetragen.
+- Einzelne Probleme ignorieren
 
-```xml
-<module name="SuppressionFilter">
+  ```xml
+  <module name="SuppressionFilter">
     <property name="file" value="cs_suppressions.xml" />
-</module>
-```
+  </module>
+  ```
 
-Neue Datei:
-`cs_suppressions.xml`.
+- Neue Datei: `cs_suppressions.xml`.
 
-```xml
-<suppressions>
+  ```xml
+  <suppressions>
     <suppress files="[\w]*Test.java" checks="SomeCheck"/>
-</suppressions>
-```
+  </suppressions>
+  ```
 
-Es können auch einzelne Verstöße im Code ignoriert werden.
+- Ignorieren direkt im Code
 
-```java
-@SuppressWarnings("checkstyle:nestedifdepth")
-public void someMethod() {
-    // Many nested structures.
-}
-```
+  ```java
+  @SuppressWarnings("checkstyle:nestedifdepth")
+  public void someMethod() {
+      // Many nested structures.
+  }
+  ```
 ]
 
 ---
@@ -290,9 +241,9 @@ public void someMethod() {
 .right-column[
 - Vordefinierte Regelwerke
 
-    - Google: http://checkstyle.sourceforge.net/google_style.html
+  - Google: http://checkstyle.sourceforge.net/google_style.html
 
-    - Sun: http://checkstyle.sourceforge.net/sun_style.html
+  - Sun: http://checkstyle.sourceforge.net/sun_style.html
 ]
 
 ---
@@ -313,12 +264,13 @@ public void someMethod() {
 java -jar checkstyle.jar -c checkstyle.xml MyClass.java
 ```
 
-Es gibt zahlreiche Konfigurationsmöglichkeiten:
+- Zahlreiche Konfigurationsmöglichkeite:
 
-- `-f` gibt das Ausgabeformat an (`plain`/`xml`)
-- `-o` gibt Ausgabedatei für Ergebnis an
-- `-e` oder `-x` geben Dateien zum Ignorieren an.
-    `-x` ist RegEx basiert.
+  - Ausgabeformat mit `-f` (`plain`/`xml`)
+
+  - Ausgabedatei mit `-o`
+
+  - Dateien zum ignorieren mit `-e` oder `-x` (RegEx)
 
 .center[![](img/checkstyle-terminal.png)]
 ]
