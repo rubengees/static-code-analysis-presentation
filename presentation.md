@@ -101,17 +101,17 @@ class: center, middle
 
 - Regelwerk
 
-  - Sammlung von Modulen
+    - Sammlung von Modulen
 
 - Modul
 
-  - Durch Checkstyle ausführbare Einheit
+    - Durch Checkstyle ausführbare Einheit
 
-  - Sammlung von Eigenschaften und Modulen
+    - Sammlung von Eigenschaften und Modulen
 
 - Eigenschaft
 
-  - Einstellung für das übergeordnete Modul
+    - Einstellung für das übergeordnete Modul
 
 - Verwendung vordefinierter und/oder eigener Module möglich
 ]
@@ -148,7 +148,7 @@ class: center, middle
 
 - `TreeWalker`-Modul ist das wichtigste
 
-  - Aufruf von Modulen wenn Token gefuden wird
+    - Aufruf von Modulen wenn Token gefuden wird
 ]
 
 ---
@@ -164,31 +164,31 @@ class: center, middle
 .right-column[
 - Gewichtung von Modulen
 
-  ```xml
-  <module name="Translation">
-    <property name="severity" value="warning"/>
-  </module>
-  ```
+    ```xml
+    <module name="Translation">
+      <property name="severity" value="warning"/>
+    </module>
+    ```
 
 - Meldung bei Regelverstoß
 
-  ```xml
-  <module name="MemberName">
-    <message key="name.invalidPattern"
-             value="Member ''{0}'' is wrong!" />
-  </module>
-  ```
+    ```xml
+    <module name="MemberName">
+      <message key="name.invalidPattern"
+               value="Member ''{0}'' is wrong!" />
+    </module>
+    ```
 
 - Eigene Module mit
 [RegEx](https://de.wikipedia.org/wiki/Regul%C3%A4rer_Ausdruck)
 
-  ```xml
-  <!-- Findet Floats, die nicht  -->
-  <!-- dem Format 3f entsprechen. -->
-  <module name="RegexpSinglelineJava">
-    <property name="format" value="[^\w][\d]+\.f"/>
-  </module>
-  ```
+    ```xml
+    <!-- Findet Floats, die nicht  -->
+    <!-- dem Format 3f entsprechen. -->
+    <module name="RegexpSinglelineJava">
+      <property name="format" value="[^\w][\d]+\.f"/>
+    </module>
+    ```
 ]
 
 ---
@@ -204,28 +204,28 @@ class: center, middle
 .right-column[
 - Einzelne Probleme ignorieren
 
-  ```xml
-  <module name="SuppressionFilter">
-    <property name="file" value="cs_suppressions.xml" />
-  </module>
-  ```
+    ```xml
+    <module name="SuppressionFilter">
+      <property name="file" value="cs_suppressions.xml" />
+    </module>
+    ```
 
 - Neue Datei: `cs_suppressions.xml`.
 
-  ```xml
-  <suppressions>
-    <suppress files="[\w]*Test.java" checks="SomeCheck"/>
-  </suppressions>
-  ```
+    ```xml
+    <suppressions>
+      <suppress files="[\w]*Test.java" checks="SomeCheck"/>
+    </suppressions>
+    ```
 
 - Ignorieren direkt im Code
 
-  ```java
-  @SuppressWarnings("checkstyle:nestedifdepth")
-  public void someMethod() {
-      // Many nested structures.
-  }
-  ```
+    ```java
+    @SuppressWarnings("checkstyle:nestedifdepth")
+    public void someMethod() {
+        // Many nested structures.
+    }
+    ```
 ]
 
 ---
@@ -241,9 +241,9 @@ class: center, middle
 .right-column[
 - Vordefinierte Regelwerke
 
-  - Google: http://checkstyle.sourceforge.net/google_style.html
+    - Google: http://checkstyle.sourceforge.net/google_style.html
 
-  - Sun: http://checkstyle.sourceforge.net/sun_style.html
+    - Sun: http://checkstyle.sourceforge.net/sun_style.html
 ]
 
 ---
@@ -264,13 +264,13 @@ class: center, middle
 java -jar checkstyle.jar -c checkstyle.xml MyClass.java
 ```
 
-- Zahlreiche Konfigurationsmöglichkeite:
+- Zahlreiche Konfigurationsmöglichkeiten:
 
-  - Ausgabeformat mit `-f` (`plain`/`xml`)
+    - Ausgabeformat mit `-f` (`plain`/`xml`)
 
-  - Ausgabedatei mit `-o`
+    - Ausgabedatei mit `-o`
 
-  - Dateien zum ignorieren mit `-e` oder `-x` (RegEx)
+    - Dateien zum ignorieren mit `-e` oder `-x` (RegEx)
 
 .center[![](img/checkstyle-terminal.png)]
 ]
