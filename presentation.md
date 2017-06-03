@@ -16,7 +16,7 @@ class: center, middle
 
 - Code Coverage prüfen mit `JaCoCo`
 
-- Alles zusammenbringen mit `Sonarqube`
+- Alles zusammenbringen mit `SonarQube`
 
 - Zusammenfassung
 
