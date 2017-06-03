@@ -307,9 +307,463 @@ class: center, middle
 
 ---
 
-# Sonarqube
+class: center, middle
 
-_TODO_
+![](img/sonarqube-logo.png)
+
+---
+
+layout: true
+
+# SonarQube
+
+---
+
+.left-column[
+## Was?
+]
+
+.right-column[
+## Allgemeines
+
+- Plattform zur Auswertung und Visualisierung von Daten gewonnen durch
+    statische Code-Analyse
+
+- Version (Juni 2017): `6.4` bzw. `5.6.6 LTS`
+
+- Lizenz: `GNU LGPL v3.0`
+
+- Entwicklungs-Status: Aktiv (https://github.com/sonarsource/sonarqube)
+
+- Entwicklung durch SonarSource S.A.
+    - Seit 2008
+]
+
+???
+
+- SonarSource S.A. ist ein schweizer Unternehmen
+
+---
+
+.left-column[
+## Was?
+]
+
+.right-column[
+## Etwas konkreter
+
+- Webapp
+    - Visualisierung der Auswertung
+    - Management (Benutzer, Projekte, Regeln, Quality Gates, Plugins, Issues, ...)
+    - Reviews / Diskussionen
+
+- Datenbank
+    - Persistierung
+
+- Scanner
+    - Durchführung der Auswertung
+]
+
+---
+
+.left-column[
+## Was?
+]
+
+.right-column[
+## Webapp
+
+![](img/sonarqube-projects-overview.png)
+]
+
+---
+
+.left-column[
+## Was?
+]
+
+.right-column[
+## Webapp
+
+![](img/sonarqube-project-details-overview.png)
+]
+
+---
+
+.left-column[
+## Was?
+]
+
+.right-column[
+## Webapp
+
+![](img/sonarqube-project-details-issues.png)
+]
+
+---
+
+.left-column[
+## Was?
+]
+
+.right-column[
+## Webapp
+
+![](img/sonarqube-project-details-measures.png)
+]
+
+---
+
+.left-column[
+## Was?
+]
+
+.right-column[
+## Webapp
+
+![](img/sonarqube-project-details-measures-maintainability.png)
+]
+
+---
+
+.left-column[
+## Was?
+]
+
+.right-column[
+## Webapp
+
+![](img/sonarqube-project-details-code.png)
+]
+
+---
+
+.left-column[
+## Was?
+]
+
+.right-column[
+## nice2know
+
+- 20+ Code Analyzers
+    - `Java`, `C/C++`, `Objective-C`, `Swift`, `C#`, `VB.NET`, `VB6`,
+        `PHP`, `XML`, `HTML`, `CSS/Less/Sass`, `JavaScript`, `COBOL`, `ABAP`,
+        `SQL`, ...
+
+- 3.000+ Regeln
+
+- Von 80.000+ Organisationen verwendet
+]
+
+---
+
+.left-column[
+## Was?
+]
+
+.right-column[
+## Geschmacksrichtungen
+
+- self-hosted
+    - https://sonarqube.org/downloads
+
+- Cloud
+    - https://sonarqube.com bzw. https://sonarcloud.io
+]
+
+---
+
+.left-column[
+## Was?
+## Wofür?
+]
+
+.right-column[
+## Webapp
+
+- Zentrale Anlaufstelle
+    - Visualisierung von Analysen
+    - Sammeln von Analyse-Daten aus statischer Code-Analyse
+    - Verwaltung von Regeln und Quality Gates
+        - Projektspezifisch (ein Projekt)
+        - Projektübergreifend (mehrere Projekte / unternehmensweit?)
+    - Reviews / Diskussionen
+    - Unabhänigkeit von IDEs / Editoren und Entwicklern
+]
+
+---
+
+.left-column[
+## Was?
+## Wofür?
+]
+
+.right-column[
+## Scanner
+
+- Analyse des Codes
+
+- Standalone Scanner / Build Tool Scanner
+    - Transfer der Analyse zu SonarQube
+
+- IDE-Plugins
+    - IDE-interne Visualisierung der Analyse
+]
+
+---
+
+.left-column[
+## Was?
+## Wofür?
+## Wie?
+]
+
+.right-column[
+## Webapp
+
+- Installation notwendiger Scanner-Plugins (Regelwerke)
+
+- Profile erstellen / konfigurieren (Regeln zuordnen)
+
+- Profile den Projekten zuordnen
+]
+
+---
+
+.left-column[
+## Was?
+## Wofür?
+## Wie?
+]
+
+.right-column[
+## Scanner
+
+- Verbindung zum Server konfigurieren
+
+- Scanner starten
+]
+
+---
+
+.left-column[
+## Was?
+## Wofür?
+## Wie?
+]
+
+.right-column[
+## Ablauf
+
+![](img/sonarqube-analyzing-process.png)
+]
+
+---
+
+.left-column[
+## Was?
+## Wofür?
+## Wie?
+## Anwendung
+]
+
+.right-column[
+## SonarQube Scanner
+
+![](img/sonarqube-scanners.png)
+]
+
+---
+
+.left-column[
+## Was?
+## Wofür?
+## Wie?
+## Anwendung
+]
+
+.right-column[
+## CLI Scanner
+
+```properties
+# conf/sonar-scanner.properties
+
+sonar.host.url=https://puck257.startdedicated.de/sonarqube
+# Set key or user name to login
+sonar.login=MyGeneratedAndVerySecretKey
+# Only needed when using user name
+#sonar.password=
+sonar.projectKey=static-code-analysis-presentation-demo:master
+sonar.projectName=static-code-analysis-presentation-demo
+sonar.projectVersion=1.0-SNAPSHOT
+sonar.sources=src/
+sonar.sourceEncoding=UTF-8
+```
+
+```bash
+# run the scanner
+sonar-scanner
+```
+]
+
+---
+
+.left-column[
+## Was?
+## Wofür?
+## Wie?
+## Anwendung
+]
+
+.right-column[
+## Gradle
+
+```groovy
+// build.gradle
+
+buildscript {
+    repositories {
+        maven { url "https://plugins.gradle.org/m2/" }
+        jcenter()
+    }
+
+    dependencies {
+        classpath "org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:2.4"
+    }
+}
+
+apply plugin: "org.sonarqube"
+
+// ... ->
+```
+]
+
+---
+
+.left-column[
+## Was?
+## Wofür?
+## Wie?
+## Anwendung
+]
+
+.right-column[
+## Gradle
+
+```groovy
+// build.gradle
+
+// ... ->
+
+sonarqube {
+    properties {
+        property "sonar.host.url", "https://puck257.startdedicated.de/sonarqube"
+        property "sonar.login" "MyGeneratedAndVerySecretKey"
+        property "sonar.projectName", "static-code-analysis-presentation-demo"
+        property "sonar.projectKey", "static-code-analysis-presentation-demo:master"
+    }
+}
+```
+
+```bash
+# run the scanner
+gradle clean check sonarqube
+```
+]
+
+---
+
+.left-column[
+## Was?
+## Wofür?
+## Wie?
+## Anwendung
+]
+
+.right-column[
+## SonarLint (IDEA)
+
+![](img/sonarqube-sonarlint-idea-settings-plugins.png)
+]
+
+---
+
+.left-column[
+## Was?
+## Wofür?
+## Wie?
+## Anwendung
+]
+
+.right-column[
+## SonarLint (IDEA)
+
+![](img/sonarqube-sonarlint-idea-settings-plugins-install-plugin.png)
+]
+
+---
+
+.left-column[
+## Was?
+## Wofür?
+## Wie?
+## Anwendung
+]
+
+.right-column[
+## SonarLint (IDEA)
+
+![](img/sonarqube-sonarlint-idea-settings-configure-server.png)
+]
+
+---
+
+.left-column[
+## Was?
+## Wofür?
+## Wie?
+## Anwendung
+]
+
+.right-column[
+## SonarLint (IDEA)
+
+![](img/sonarqube-sonarlint-idea-settings-configure-server-connection.png)
+]
+
+---
+
+.left-column[
+## Was?
+## Wofür?
+## Wie?
+## Anwendung
+]
+
+.right-column[
+## SonarLint (IDEA)
+
+![](img/sonarqube-sonarlint-idea-settings-bind-project.png)
+]
+
+---
+
+.left-column[
+## Was?
+## Wofür?
+## Wie?
+## Anwendung
+]
+
+.right-column[
+## SonarLint (IDEA)
+
+![](img/sonarqube-sonarlint-idea-analyze-file.png)
+]
+
+---
+
+layout: true
 
 ---
 
@@ -333,4 +787,8 @@ _TODO_
 
 # Quellen
 
-_TODO_
+- https://de.wikipedia.org/wiki/SonarQube
+- https://www.sonarqube.org
+- https://www.sonarqube.com
+- https://www.sonarsource.com
+- http://www.sonarlint.org
