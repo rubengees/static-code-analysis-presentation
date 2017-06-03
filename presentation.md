@@ -10,13 +10,13 @@ class: center, middle
 
 - Was ist statische Code-Analyse?
 
-- Einheitlichen Style überprüfen: `Checkstyle`
+- Einheitlicher Code-Stil mit `Checkstyle`
 
-- Automatisch Fehler finden: `FindBugs`
+- Automatisiert Fehler finden mit `FindBugs`
 
-- (Unit)-Testabdeckung: `JaCoCo`
+- Code Coverage prüfen mit `JaCoCo`
 
-- Alles zusammen: `Sonarqube`
+- Alles zusammenbringen mit `Sonarqube`
 
 - Zusammenfassung
 
