@@ -53,7 +53,7 @@ class: center, middle
 .right-column[
 - Automatisiertes Validieren des (Java-)Code-Stils gegen definierte Regeln
 
-- Aktuelle Version (Mai 2017): `7.7`
+- Aktuelle Version (Juni 2017): `7.8`
 
 - Lizenz: `GNU LGPL v2.1`
 
