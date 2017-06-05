@@ -97,8 +97,8 @@ entsprechende Software (z. B. im Modultest) ausgeführt wird."*
 ## Wie?
 ]
 
-.right-column.center[
-## Mit nachfolgenden Tools ...
+.right-column.center.img[
+![](img/static-code-analysis-tools.png)
 ]
 
 ---
