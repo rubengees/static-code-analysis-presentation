@@ -103,7 +103,7 @@ entsprechende Software (z. B. im Modultest) ausgeführt wird."*
 
 ---
 
-# Fortschritt
+# Inhalt
 
 - Was ist statische Code-Analyse?
 
@@ -123,7 +123,7 @@ entsprechende Software (z. B. im Modultest) ausgeführt wird."*
 
 ---
 
-# Fortschritt
+# Inhalt
 
 - Was ist statische Code-Analyse? .check[![](img/check.png)]
 
@@ -531,6 +531,46 @@ checkstyle {
 
 ---
 
+# Inhalt
+
+- Was ist statische Code-Analyse? .check[![](img/check.png)]
+
+- Einheitlicher Code-Stil mit `Checkstyle`
+
+- Automatisiert Fehler finden mit `FindBugs`
+
+- Code Coverage prüfen mit `JaCoCo`
+
+- Alles zusammenbringen mit `SonarQube`
+
+- Zusammenfassung
+
+- Ausblick
+
+- Quellen
+
+---
+
+# Inhalt
+
+- Was ist statische Code-Analyse? .check[![](img/check.png)]
+
+- Einheitlicher Code-Stil mit `Checkstyle` .check[![](img/check.png)]
+
+- Automatisiert Fehler finden mit `FindBugs`
+
+- Code Coverage prüfen mit `JaCoCo`
+
+- Alles zusammenbringen mit `SonarQube`
+
+- Zusammenfassung
+
+- Ausblick
+
+- Quellen
+
+---
+
 class: center, middle
 
 ![](img/jacoco-logo.png)
@@ -769,6 +809,46 @@ Classes: Mindestens eine Komponente der Klasse wurde ausgeführt
 class: center, middle
 
 # Demo
+
+---
+
+# Inhalt
+
+- Was ist statische Code-Analyse? .check[![](img/check.png)]
+
+- Einheitlicher Code-Stil mit `Checkstyle` .check[![](img/check.png)]
+
+- Automatisiert Fehler finden mit `FindBugs`
+
+- Code Coverage prüfen mit `JaCoCo`
+
+- Alles zusammenbringen mit `SonarQube`
+
+- Zusammenfassung
+
+- Ausblick
+
+- Quellen
+
+---
+
+# Inhalt
+
+- Was ist statische Code-Analyse? .check[![](img/check.png)]
+
+- Einheitlicher Code-Stil mit `Checkstyle` .check[![](img/check.png)]
+
+- Automatisiert Fehler finden mit `FindBugs` .check[![](img/check.png)]
+
+- Code Coverage prüfen mit `JaCoCo`
+
+- Alles zusammenbringen mit `SonarQube`
+
+- Zusammenfassung
+
+- Ausblick
+
+- Quellen
 
 ---
 
@@ -1188,6 +1268,46 @@ layout: true
 class: center, middle
 
 # Demo
+
+---
+
+# Inhalt
+
+- Was ist statische Code-Analyse? .check[![](img/check.png)]
+
+- Einheitlicher Code-Stil mit `Checkstyle` .check[![](img/check.png)]
+
+- Automatisiert Fehler finden mit `FindBugs` .check[![](img/check.png)]
+
+- Code Coverage prüfen mit `JaCoCo`
+
+- Alles zusammenbringen mit `SonarQube`
+
+- Zusammenfassung
+
+- Ausblick
+
+- Quellen
+
+---
+
+# Inhalt
+
+- Was ist statische Code-Analyse? .check[![](img/check.png)]
+
+- Einheitlicher Code-Stil mit `Checkstyle` .check[![](img/check.png)]
+
+- Automatisiert Fehler finden mit `FindBugs` .check[![](img/check.png)]
+
+- Code Coverage prüfen mit `JaCoCo` .check[![](img/check.png)]
+
+- Alles zusammenbringen mit `SonarQube`
+
+- Zusammenfassung
+
+- Ausblick
+
+- Quellen
 
 ---
 
@@ -1657,15 +1777,135 @@ class: center, middle
 
 ---
 
+# Inhalt
+
+- Was ist statische Code-Analyse? .check[![](img/check.png)]
+
+- Einheitlicher Code-Stil mit `Checkstyle` .check[![](img/check.png)]
+
+- Automatisiert Fehler finden mit `FindBugs` .check[![](img/check.png)]
+
+- Code Coverage prüfen mit `JaCoCo` .check[![](img/check.png)]
+
+- Alles zusammenbringen mit `SonarQube`
+
+- Zusammenfassung
+
+- Ausblick
+
+- Quellen
+
+---
+
+# Inhalt
+
+- Was ist statische Code-Analyse? .check[![](img/check.png)]
+
+- Einheitlicher Code-Stil mit `Checkstyle` .check[![](img/check.png)]
+
+- Automatisiert Fehler finden mit `FindBugs` .check[![](img/check.png)]
+
+- Code Coverage prüfen mit `JaCoCo` .check[![](img/check.png)]
+
+- Alles zusammenbringen mit `SonarQube` .check[![](img/check.png)]
+
+- Zusammenfassung
+
+- Ausblick
+
+- Quellen
+
+---
+
 # Zusammenfassung
 
 _TODO_
 
 ---
 
+# Inhalt
+
+- Was ist statische Code-Analyse? .check[![](img/check.png)]
+
+- Einheitlicher Code-Stil mit `Checkstyle` .check[![](img/check.png)]
+
+- Automatisiert Fehler finden mit `FindBugs` .check[![](img/check.png)]
+
+- Code Coverage prüfen mit `JaCoCo` .check[![](img/check.png)]
+
+- Alles zusammenbringen mit `SonarQube` .check[![](img/check.png)]
+
+- Zusammenfassung
+
+- Ausblick
+
+- Quellen
+
+---
+
+# Inhalt
+
+- Was ist statische Code-Analyse? .check[![](img/check.png)]
+
+- Einheitlicher Code-Stil mit `Checkstyle` .check[![](img/check.png)]
+
+- Automatisiert Fehler finden mit `FindBugs` .check[![](img/check.png)]
+
+- Code Coverage prüfen mit `JaCoCo` .check[![](img/check.png)]
+
+- Alles zusammenbringen mit `SonarQube` .check[![](img/check.png)]
+
+- Zusammenfassung .check[![](img/check.png)]
+
+- Ausblick
+
+- Quellen
+
+---
+
 # Ausblick
 
 _TODO_
+
+---
+
+# Inhalt
+
+- Was ist statische Code-Analyse? .check[![](img/check.png)]
+
+- Einheitlicher Code-Stil mit `Checkstyle` .check[![](img/check.png)]
+
+- Automatisiert Fehler finden mit `FindBugs` .check[![](img/check.png)]
+
+- Code Coverage prüfen mit `JaCoCo` .check[![](img/check.png)]
+
+- Alles zusammenbringen mit `SonarQube` .check[![](img/check.png)]
+
+- Zusammenfassung .check[![](img/check.png)]
+
+- Ausblick
+
+- Quellen
+
+---
+
+# Inhalt
+
+- Was ist statische Code-Analyse? .check[![](img/check.png)]
+
+- Einheitlicher Code-Stil mit `Checkstyle` .check[![](img/check.png)]
+
+- Automatisiert Fehler finden mit `FindBugs` .check[![](img/check.png)]
+
+- Code Coverage prüfen mit `JaCoCo` .check[![](img/check.png)]
+
+- Alles zusammenbringen mit `SonarQube` .check[![](img/check.png)]
+
+- Zusammenfassung .check[![](img/check.png)]
+
+- Ausblick .check[![](img/check.png)]
+
+- Quellen
 
 ---
 
