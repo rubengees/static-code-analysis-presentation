@@ -1645,8 +1645,14 @@ _TODO_
 - https://github.com/checkstyle/checkstyle
 - https://plugins.jetbrains.com/plugin/1065-checkstyle-idea
 - https://docs.gradle.org/3.3/userguide/checkstyle_plugin.html
+- http://findbugs.sourceforge.net
+- http://findbugs.sourceforge.net/manual/index.html
+- https://de.wikipedia.org/wiki/FindBugs
+- http://www.fh-wedel.de/~si/seminare/ws08/Ausarbeitung/11.ca/findbugs.html
+- https://plugins.jetbrains.com/plugin/3847-findbugs-idea
 - https://de.wikipedia.org/wiki/SonarQube
 - https://www.sonarqube.org
 - https://www.sonarqube.com
 - https://www.sonarsource.com
 - http://www.sonarlint.org
+- https://plugins.jetbrains.com/plugin/7973-sonarlint
