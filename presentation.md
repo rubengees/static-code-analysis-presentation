@@ -342,6 +342,44 @@ java -jar checkstyle.jar -c checkstyle.xml MyClass.java
 
 ---
 
+# Checkstyle
+
+.left-column[
+## Was?
+## Wofür?
+## Wie?
+## Anwendung
+]
+
+.right-column[
+## Möglichkeit 2: IDE Plugin (IntelliJ)
+
+#### Live Highlighting
+
+.center[![](img/checkstyle-ide-live.png)]
+]
+
+---
+
+# Checkstyle
+
+.left-column[
+## Was?
+## Wofür?
+## Wie?
+## Anwendung
+]
+
+.right-column[
+## Möglichkeit 2: IDE Plugin (IntelliJ)
+
+#### Manuelles Scannen
+
+.center[![](img/checkstyle-ide-manual.png)]
+]
+
+---
+
 class: center, middle
 
 # Demo
