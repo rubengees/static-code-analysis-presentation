@@ -474,13 +474,19 @@ java -jar checkstyle.jar -c checkstyle.xml MyClass.java
 .right-column[
 ## Möglichkeit 3: Build-Tool (Gradle)
 
-- Standart config Datei als `config/checkstyle/checkstyle.xml`
+- Standart config Datei: `config/checkstyle/checkstyle.xml`
 
 - Eigener Pfad auch möglich
 
 #### Konfiguration in `build.gradle`
 
-![](img/checkstyle-gradle-config.png)
+```groovy
+apply plugin: "checkstyle"
+
+checkstyle {
+    configFile = file("config/checkstyle/sun_checks.xml")
+}
+```
 ]
 
 ---
