@@ -309,7 +309,7 @@ class: center, middle
 
 class: center, middle
 
-![](img/sonarqube-logo.png)
+.title-image[![](img/sonarqube-logo.png)]
 
 ---
 
