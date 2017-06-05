@@ -491,6 +491,12 @@ checkstyle {
 
 ---
 
+class: center, middle
+
+![](img/jacoco-logo.png)
+
+---
+
 # JaCoCo
 
 .left-column[
@@ -1136,18 +1142,6 @@ findbugs {
 ---
 
 layout: true
-
----
-
-class: center, middle
-
-# Demo
-
----
-
-class: center, middle
-
-![](img/jacoco-logo.png)
 
 ---
 
