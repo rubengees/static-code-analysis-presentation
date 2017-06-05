@@ -26,15 +26,80 @@ class: center, middle
 
 ---
 
-# Was ist statische Code-Analyse?
+# Statische Code-Analyse
 
-> *Statische Code-Analyse oder kurz statische Analyse ist ein statisches
-> Software-Testverfahren, das zur Übersetzungszeit durchgeführt wird. Der
-> Quelltext wird hierbei einer Reihe formaler Prüfungen unterzogen, bei denen
-> bestimmte Sorten von Fehlern entdeckt werden können, noch bevor die
-> entsprechende Software (z. B. im Modultest) ausgeführt wird.*
+.left-column[
+## Was?
+]
+
+.right-column[
+*"Statische Code-Analyse oder kurz statische Analyse ist ein statisches
+Software-Testverfahren, das zur Übersetzungszeit durchgeführt wird. Der
+Quelltext wird hierbei einer Reihe formaler Prüfungen unterzogen, bei denen
+bestimmte Sorten von Fehlern entdeckt werden können, noch bevor die
+entsprechende Software (z. B. im Modultest) ausgeführt wird."*
 
 *Quelle: https://de.wikipedia.org/wiki/Statische_Code-Analyse*
+]
+
+---
+
+# Statische Code-Analyse
+
+.left-column[
+## Was?
+]
+
+.right-column[
+## Arten
+
+- Code-Stil-Analyse
+
+- Code Smells
+
+- Fehlersuche (potenzieller Fehler)
+
+- Metriken
+    - Testabdeckung
+    - Komplexizität
+    - Wartbarkeit
+
+- Architektur-Analyse
+
+- ...
+]
+
+---
+
+# Statische Code-Analyse
+
+.left-column[
+## Was?
+## Wofür?
+]
+
+.right-column[
+- Unterstützung bei der Arbeit
+    - Automatisierung musterbasierter Routine-Checks
+    - Aufdeckung potenzieller Fehlerquellen
+    - Aufzeigen von Potenzialen
+
+- Visualisierung der Code-Qualität
+]
+
+---
+
+# Statische Code-Analyse
+
+.left-column[
+## Was?
+## Wofür?
+## Wie?
+]
+
+.right-column.center[
+## Mit nachfolgenden Tools ...
+]
 
 ---
 
