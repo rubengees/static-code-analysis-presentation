@@ -1871,7 +1871,34 @@ _TODO_
 
 # Ausblick
 
-_TODO_
+- Cloudbasierte Varianten für CI, Coverage und Analyse
+
+    - Nahezu keine manuelle Konfiguration
+
+    - Kein eigenes Hosting (Schlecht bei privaten Projekten)
+
+    - Beliebt bei Open Source Projekten (meistens kostenlos in dem Fall!)
+
+        - Gute Integration mit GitHub
+
+![](img/cloud-logos.png)
+---
+
+# Ausblick: Codecov.io
+
+![](img/codecov.png)
+
+---
+
+# Ausblick: CircleCi
+
+![](img/circleci.png)
+
+---
+
+# Ausblick: Codacy
+
+![](img/codacy.png)
 
 ---
 
