@@ -1680,6 +1680,10 @@ _TODO_
 - https://de.wikipedia.org/wiki/FindBugs
 - http://www.fh-wedel.de/~si/seminare/ws08/Ausarbeitung/11.ca/findbugs.html
 - https://plugins.jetbrains.com/plugin/3847-findbugs-idea
+- http://www.jacoco.org/jacoco/trunk/index.html
+- https://github.com/jacoco/jacoco
+- https://www.jetbrains.com/help/idea/2017.1/code-coverage.html
+- https://docs.gradle.org/3.3/userguide/jacoco_plugin.html
 - https://de.wikipedia.org/wiki/SonarQube
 - https://www.sonarqube.org
 - https://www.sonarqube.com
