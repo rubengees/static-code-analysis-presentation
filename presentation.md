@@ -337,6 +337,8 @@ java -jar checkstyle.jar -c checkstyle.xml MyClass.java
 
     - Dateien zum Ignorieren mit `-e` oder `-x` (RegEx)
 
+#### Aufruf und Ausgabe
+
 ![](img/checkstyle-terminal.png)
 ]
 
@@ -394,7 +396,7 @@ java -jar checkstyle.jar -c checkstyle.xml MyClass.java
 
 #### Neue Konfiguration anlegen
 
-.center-image[![](img/checkstyle-config-new.png)]
+.center-image[![](img/checkstyle-ide-config-new.png)]
 ]
 
 ---
@@ -413,7 +415,72 @@ java -jar checkstyle.jar -c checkstyle.xml MyClass.java
 
 #### Alle Konfigurationsmöglichkeiten
 
-.center-image[![](img/checkstyle-config.png)]
+.center-image[![](img/checkstyle-ide-config.png)]
+]
+
+---
+
+# Checkstyle
+
+.left-column[
+## Was?
+## Wofür?
+## Wie?
+## Anwendung
+]
+
+.right-column[
+## Möglichkeit 3: Build-Tool (Gradle)
+
+- Neue Tasks: `checkstyleMain` und `checkstyleTest`
+
+- Ausführung während des `check`-Tasks
+
+#### Ausgabe auf der Konsole
+
+![](img/checkstyle-gradle-terminal.png)
+]
+
+---
+
+# Checkstyle
+
+.left-column[
+## Was?
+## Wofür?
+## Wie?
+## Anwendung
+]
+
+.right-column[
+## Möglichkeit 3: Build-Tool (Gradle)
+
+#### Generierte Report Datei (`build/reports/main.html`)
+
+.center-image[![](img/checkstyle-gradle-report.png)]
+]
+
+---
+
+# Checkstyle
+
+.left-column[
+## Was?
+## Wofür?
+## Wie?
+## Anwendung
+]
+
+.right-column[
+## Möglichkeit 3: Build-Tool (Gradle)
+
+- Standart config Datei als `config/checkstyle/checkstyle.xml`
+
+- Eigener Pfad auch möglich
+
+#### Konfiguration in `build.gradle`
+
+![](img/checkstyle-gradle-config.png)
 ]
 
 ---
