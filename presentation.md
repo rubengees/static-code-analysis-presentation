@@ -922,7 +922,7 @@ class: center, middle
 
 class: center, middle
 
-.title-image[![](img/jacoco-logo.png)]
+![](img/jacoco-logo.png)
 
 ---
 
