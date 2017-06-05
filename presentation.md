@@ -1001,6 +1001,10 @@ _TODO_
 
 # Quellen
 
+- http://checkstyle.sourceforge.net/
+- https://github.com/checkstyle/checkstyle
+- https://plugins.jetbrains.com/plugin/1065-checkstyle-idea
+- https://docs.gradle.org/3.3/userguide/checkstyle_plugin.html
 - https://de.wikipedia.org/wiki/SonarQube
 - https://www.sonarqube.org
 - https://www.sonarqube.com
