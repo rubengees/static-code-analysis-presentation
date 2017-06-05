@@ -491,6 +491,235 @@ checkstyle {
 
 ---
 
+# JaCoCo
+
+.left-column[
+## Was?
+]
+
+.right-column[
+- Generieren von Test-Coverage Auswertungen
+
+- Aktuelle Version (Juni 2017): `0.7.9`
+
+- Lizenz: `Eclipse Public License Version 1.0 ("EPL")`
+
+- Aktive Weiterentwicklung
+
+- Integration mit sehr vielen Tools und Systemen
+
+- Eigene [Mailinglist](https://groups.google.com/forum/?fromgroups=#!forum/jacoco)
+]
+
+---
+
+# JaCoCo
+
+.left-column[
+## Was?
+## Warum?
+]
+
+.right-column[
+- Übersicht über getesten Code
+
+- Einfaches Finden von nicht ausreichend getestetem Code
+
+- Gefühl der Sicherheit
+]
+
+---
+
+# JaCoCo
+
+.left-column[
+## Was?
+## Warum?
+## Wie?
+]
+
+.right-column[
+- Arbeitet auf JVM-Bytecode
+
+    - Eigentlicher Quellcode nicht nötig
+
+- `Instructions`, `Branches`, `Cyclomatic Complexity`, `Lines`, `Methods` und
+  `Classes` werden untersucht
+]
+
+???
+
+Instructions: C0 Anzahl der Instructions  
+Branches: C1 Anzahl der durchlaufenen Branches  
+Cyclomatic: Minimale Anzahl an Pfaden um alles in der Methode abzudecken  
+Lines:
+
+| Eigenschaft | Beschreibung |
+| ----------- | :------------: |
+| No          | Garnicht ausgeführt |  
+| Partial     | Ein Teil der Zeile wurde ausgeführt |  
+| Full        | Alles  
+
+Classes: Mindestens eine Komponente der Klasse wurde ausgeführt
+
+---
+
+# JaCoCo
+
+.left-column[
+## Was?
+## Warum?
+## Wie?
+## Anwendung
+]
+
+.right-column[
+## Möglichkeit 1: IDE (IntelliJ)
+
+- Benötigtes Plugin: `Coverage`
+
+#### Ausführen mit Coverage
+
+![](img/jacoco-ide-run.png)
+]
+
+---
+
+# JaCoCo
+
+.left-column[
+## Was?
+## Warum?
+## Wie?
+## Anwendung
+]
+
+.right-column[
+## Möglichkeit 1: IDE (IntelliJ)
+
+#### Ergebnis: Übersicht
+
+![](img/jacoco-ide-overview.png)
+]
+
+---
+
+# JaCoCo
+
+.left-column[
+## Was?
+## Warum?
+## Wie?
+## Anwendung
+]
+
+.right-column[
+## Möglichkeit 1: IDE (IntelliJ)
+
+#### Ergebnis: Klassen pro Package
+
+![](img/jacoco-ide-package.png)
+]
+
+---
+
+# JaCoCo
+
+.left-column[
+## Was?
+## Warum?
+## Wie?
+## Anwendung
+]
+
+.right-column[
+## Möglichkeit 1: IDE (IntelliJ)
+
+#### Marker im Code
+
+.center-image[![](img/jacoco-ide-markers.png)]
+]
+
+---
+
+# JaCoCo
+
+.left-column[
+## Was?
+## Warum?
+## Wie?
+## Anwendung
+]
+
+.right-column[
+## Möglichkeit 1: IDE (IntelliJ)
+
+#### Konfiguration
+
+.center-image[![](img/jacoco-ide-config.png)]
+]
+
+---
+
+# JaCoCo
+
+.left-column[
+## Was?
+## Warum?
+## Wie?
+## Anwendung
+]
+
+.right-column[
+## Möglichkeit 2: Build-Tool (Gradle)
+
+- Neue Tasks: `jacocoTestCoverageVerification` und `jacocoTestReport`
+
+- Muss nach dem `check` oder `test` Task ausgeführt werden.
+
+- Report-Datei wird generiert, kein Konsolen Output
+]
+
+---
+
+# JaCoCo
+
+.left-column[
+## Was?
+## Warum?
+## Wie?
+## Anwendung
+]
+
+.right-column[
+## Möglichkeit 2: Build-Tool (Gradle)
+
+#### Übersicht
+
+![](img/jacoco-gradle-report-overview.png)
+]
+
+---
+
+# JaCoCo
+
+.left-column[
+## Was?
+## Warum?
+## Wie?
+## Anwendung
+]
+
+.right-column[
+## Möglichkeit 2: Build-Tool (Gradle)
+
+#### Zeilenabdeckung
+
+.center-image[![](img/jacoco-gradle-report-class.png)]
+]
+
+---
+
 class: center, middle
 
 # Demo
