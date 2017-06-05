@@ -531,6 +531,12 @@ checkstyle {
 
 ---
 
+class: center, middle
+
+# Demo
+
+---
+
 # Inhalt
 
 - Was ist statische Code-Analyse? .check[![](img/check.png)]
