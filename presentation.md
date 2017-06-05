@@ -503,6 +503,417 @@ class: center, middle
 
 ---
 
+layout: true
+
+# FindBugs
+
+---
+
+.left-column[
+## Was?
+]
+
+.right-column[
+## Allgemein
+
+- Untersucht Java-Bytecode auf bekannte Fehlermuster
+
+- Aktuelle Version (Juni 2017): `3.0.1`
+
+- Lizenz: `LGPL`
+
+- Entwicklungs-Status: Semi-Aktiv (https://github.com/findbugsproject/findbugs)
+
+- Initiiert durch University of Maryland
+    - 2003
+]
+
+---
+
+.left-column[
+## Was?
+]
+
+.right-column[
+## Konkreter
+
+- Analyse anhand von Bug Pattern
+    - Sowas wie Anti Pattern
+
+- Erweiterung über Plugin-Architektur
+    - Java-Bytecode KnowHow nötig
+
+- Varianten
+    - Standalone (CLI + GUI + TUI)
+    - Build Tool Plugins
+    - IDE Plugins
+]
+
+---
+
+.left-column[
+## Was?
+## Wofür?
+]
+
+.right-column[
+- Aufdecken potenzieller Fehler
+    - False positives möglich
+
+- Gründe für Fehler
+    - Komplizierte/Missverstandene Sprach-Features
+    - Missverstandene APIs
+    - Missverständnis nach Code-Refactorings
+    - Tippfehler
+        - `==` statt `!=`
+]
+
+---
+
+.left-column[
+## Was?
+## Wofür?
+## Wie?
+]
+
+.right-column[
+## Filter
+
+- Filter-Definition als XML-Datei(en)
+    - http://findbugs.sourceforge.net/manual/filter.html
+
+- Verwendung als ...
+    - include
+    - exclude
+]
+
+---
+
+.left-column[
+## Was?
+## Wofür?
+## Wie?
+]
+
+.right-column[
+## Filter (Beispiel)
+
+```xml
+<!-- excludes.xml -->
+<FindBugsFilter>
+    <!-- All bugs in test classes, except for JUnit-specific bugs. -->
+    <Match>
+        <Class name="~.*\.*Test" />
+        <Not>
+            <Bug code="IJU" />
+        </Not>
+    </Match>
+    <!-- Ignore DTOs/beans. -->
+    <Match>
+        <Package name="~.*\.persistence\.dto" />
+    </Match>
+</FindBugsFilter>
+```
+]
+
+---
+
+.left-column[
+## Was?
+## Wofür?
+## Wie?
+]
+
+.right-column[
+## Filter (Beispiel)
+
+```xml
+<!-- excludes.xml -->
+<FindBugsFilter>
+     <Match>
+        <Class name="foo.bar.Foobar" />
+        <Method name="writeDataToFile" />
+        <Bug pattern="OS_OPEN_STREAM" />
+    </Match>
+</FindBugsFilter>
+```
+]
+
+---
+
+.left-column[
+## Was?
+## Wofür?
+## Wie?
+]
+
+.right-column[
+## Filter (Beispiel)
+
+```xml
+<!-- excludes.xml -->
+<FindBugsFilter>
+    <!-- Match all XYZ violations. -->
+    <Match>
+        <Bug code="XYZ" />
+    </Match>
+
+    <!-- Match all doublecheck violations in these methods of "AnotherClass". -->
+    <Match>
+        <Class name="com.foobar.AnotherClass" />
+        <Or>
+            <Method name="nonOverloadedMethod" />
+            <Method name="foo" params="int,java.lang.String" returns="void" />
+            <Method name="bar" params="" returns="boolean" />
+        </Or>
+        <Bug code="DC" />
+    </Match>
+</FindBugsFilter>
+```
+]
+
+---
+
+.left-column[
+## Was?
+## Wofür?
+## Wie?
+]
+
+.right-column[
+## Interessante Optionen
+
+- `-include` / `-exclude`
+    - Bug-Reports einbeziehen / ignorieren
+
+- Ausgabeformate
+    - `-xml`
+    - `-html`
+    - `-xdoc`
+    - `-emacs`
+]
+
+---
+
+.left-column[
+## Was?
+## Wofür?
+## Wie?
+]
+
+.right-column[
+## Interessante Optionen
+
+- `-low` / `-medium` (Standard) / `-high`
+    - Alle / Mittlere + Hohe Prio / Hohe Prio
+
+- `-relaxed`
+    - Versucht false-positives zu erkennen und rauszufiltern
+]
+
+---
+
+.left-column[
+## Was?
+## Wofür?
+## Wie?
+]
+
+.right-column[
+## Interessante Optionen
+
+- `-effort:min`
+    - Weniger intensive Analyse
+    - Weniger Speicherverbrauch
+    - Schneller
+
+- `-effort:max`
+    - Sehr intensive Analyse
+    - Höherer Speicherverbrauch
+    - Zeitintensiver
+
+- `-effort:default` (Standard)
+    - irgendwas zwischen `min` und `max`
+]
+
+---
+
+.left-column[
+## Was?
+## Wofür?
+## Wie?
+## Anwendung
+]
+
+.right-column[
+## CLI
+
+```bash
+java -jar findbugs.jar -exclude excludes.xml -output findbugs-report.xml -xml:withMessages -effort:max -low app.jar
+```
+
+![](img/findbugs-cli-terminal.png)
+]
+
+---
+
+.left-column[
+## Was?
+## Wofür?
+## Wie?
+## Anwendung
+]
+
+.right-column[
+## Gradle
+
+```groovy
+// build.gradle
+
+// ...
+
+apply plugin: "findbugs"
+
+// ...
+
+findbugs {
+    ignoreFailures: true
+}
+
+// ...
+```
+]
+
+---
+
+.left-column[
+## Was?
+## Wofür?
+## Wie?
+## Anwendung
+]
+
+.right-column[
+## Gradle
+
+```bash
+./gradlew clean check # findbugsMain findbugsTest
+```
+
+![](img/findbugs-gradle-terminal.png)
+]
+
+---
+
+.left-column[
+## Was?
+## Wofür?
+## Wie?
+## Anwendung
+]
+
+.right-column[
+## IDE-Plugin (IDEA)
+
+![](img/findbugs-idea-settings-plugins.png)
+]
+
+---
+
+.left-column[
+## Was?
+## Wofür?
+## Wie?
+## Anwendung
+]
+
+.right-column[
+## IDE-Plugin (IDEA)
+
+![](img/findbugs-idea-settings-plugins-install-plugin.png)
+]
+
+---
+
+.left-column[
+## Was?
+## Wofür?
+## Wie?
+## Anwendung
+]
+
+.right-column[
+## IDE-Plugin (IDEA)
+
+![](img/findbugs-idea-settings-general.png)
+]
+
+---
+
+.left-column[
+## Was?
+## Wofür?
+## Wie?
+## Anwendung
+]
+
+.right-column[
+## IDE-Plugin (IDEA)
+
+![](img/findbugs-idea-settings-report.png)
+]
+
+---
+
+.left-column[
+## Was?
+## Wofür?
+## Wie?
+## Anwendung
+]
+
+.right-column[
+## IDE-Plugin (IDEA)
+
+![](img/findbugs-idea-settings-filter.png)
+]
+
+---
+
+.left-column[
+## Was?
+## Wofür?
+## Wie?
+## Anwendung
+]
+
+.right-column[
+## IDE-Plugin (IDEA)
+
+![](img/findbugs-idea-settings-detector.png)
+]
+
+---
+
+.left-column[
+## Was?
+## Wofür?
+## Wie?
+## Anwendung
+]
+
+.right-column[
+## IDE-Plugin (IDEA)
+
+![](img/findbugs-idea-analyze-project-result.png)
+]
+
+---
+
+layout: true
+
+---
+
 class: center, middle
 
 # Demo
@@ -523,7 +934,7 @@ class: center, middle
 
 class: center, middle
 
-.title-image[![](img/sonarqube-logo.png)]
+![](img/sonarqube-logo.png)
 
 ---
 
