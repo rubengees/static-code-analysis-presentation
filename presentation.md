@@ -335,7 +335,7 @@ java -jar checkstyle.jar -c checkstyle.xml MyClass.java
 
     - Ausgabedatei mit `-o`
 
-    - Dateien zum ignorieren mit `-e` oder `-x` (RegEx)
+    - Dateien zum Ignorieren mit `-e` oder `-x` (RegEx)
 
 ![](img/checkstyle-terminal.png)
 ]
