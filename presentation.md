@@ -66,7 +66,7 @@ entsprechende Software (z. B. im Modultest) ausgeführt wird."*
 
 - Architektur-Analyse
 
-- ...
+- etc.
 ]
 
 ---
