@@ -1825,7 +1825,22 @@ class: center, middle
 
 # Zusammenfassung
 
-_TODO_
+- Statische Code-Analyse kann helfen
+    - Code-Stil
+    - Automatisierte Fehlersuche
+    - Testabdeckung
+    - Architektur
+
+- Statische Code-Analyse ist keine absolute Warheit!
+    - 100% perfekt gibt's nicht!
+    - Situationsgerecht konfigurieren
+    - brain.exe!
+
+- Support durch viele Tools
+    - Gute Integration
+        - IDEs
+        - Build-Tools
+        - CI
 
 ---
 
