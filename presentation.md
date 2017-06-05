@@ -1941,6 +1941,10 @@ _TODO_
 
 class: center, middle
 
-# Vielen Dank für eure Aufmerksamkeit!
+![](img/end-1.jpg)
 
-# Fragen?
+---
+
+class: center, middle
+
+![](img/end-2.png)
