@@ -1690,3 +1690,11 @@ _TODO_
 - https://www.sonarsource.com
 - http://www.sonarlint.org
 - https://plugins.jetbrains.com/plugin/7973-sonarlint
+
+---
+
+class: center, middle
+
+# Vielen Dank für eure Aufmerksamkeit!
+
+# Fragen?
