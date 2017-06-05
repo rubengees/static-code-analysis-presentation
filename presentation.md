@@ -103,6 +103,46 @@ entsprechende Software (z. B. im Modultest) ausgeführt wird."*
 
 ---
 
+# Fortschritt
+
+- Was ist statische Code-Analyse?
+
+- Einheitlicher Code-Stil mit `Checkstyle`
+
+- Automatisiert Fehler finden mit `FindBugs`
+
+- Code Coverage prüfen mit `JaCoCo`
+
+- Alles zusammenbringen mit `SonarQube`
+
+- Zusammenfassung
+
+- Ausblick
+
+- Quellen
+
+---
+
+# Fortschritt
+
+- Was ist statische Code-Analyse? .check[![](img/check.png)]
+
+- Einheitlicher Code-Stil mit `Checkstyle`
+
+- Automatisiert Fehler finden mit `FindBugs`
+
+- Code Coverage prüfen mit `JaCoCo`
+
+- Alles zusammenbringen mit `SonarQube`
+
+- Zusammenfassung
+
+- Ausblick
+
+- Quellen
+
+---
+
 class: center, middle
 
 .title-image[![](img/checkstyle-logo.png)]
