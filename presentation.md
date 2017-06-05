@@ -337,7 +337,7 @@ java -jar checkstyle.jar -c checkstyle.xml MyClass.java
 
     - Dateien zum ignorieren mit `-e` oder `-x` (RegEx)
 
-.center[![](img/checkstyle-terminal.png)]
+![](img/checkstyle-terminal.png)
 ]
 
 ---
@@ -356,7 +356,7 @@ java -jar checkstyle.jar -c checkstyle.xml MyClass.java
 
 #### Live Highlighting
 
-.center[![](img/checkstyle-ide-live.png)]
+![](img/checkstyle-ide-live.png)
 ]
 
 ---
@@ -375,7 +375,45 @@ java -jar checkstyle.jar -c checkstyle.xml MyClass.java
 
 #### Manuelles Scannen
 
-.center[![](img/checkstyle-ide-manual.png)]
+![](img/checkstyle-ide-manual.png)
+]
+
+---
+
+# Checkstyle
+
+.left-column[
+## Was?
+## Wofür?
+## Wie?
+## Anwendung
+]
+
+.right-column[
+## Möglichkeit 2: IDE Plugin (IntelliJ)
+
+#### Neue Konfiguration anlegen
+
+.center-image[![](img/checkstyle-config-new.png)]
+]
+
+---
+
+# Checkstyle
+
+.left-column[
+## Was?
+## Wofür?
+## Wie?
+## Anwendung
+]
+
+.right-column[
+## Möglichkeit 2: IDE Plugin (IntelliJ)
+
+#### Alle Konfigurationsmöglichkeiten
+
+.center-image[![](img/checkstyle-config.png)]
 ]
 
 ---
