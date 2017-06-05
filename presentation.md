@@ -999,11 +999,7 @@ java -jar findbugs.jar -exclude excludes.xml -output findbugs-report.xml -xml:wi
 ```groovy
 // build.gradle
 
-// ...
-
 apply plugin: "findbugs"
-
-// ...
 
 findbugs {
     ignoreFailures: true
